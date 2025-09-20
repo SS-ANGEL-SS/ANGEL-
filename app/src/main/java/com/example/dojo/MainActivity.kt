@@ -49,17 +49,17 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
         Text(text = text, color = textColor)
 
         // Button 1: change text
-        Button(onClick = { text = "Text changed!" }) {
+        Button(onClick = { text = "Good luck you today !" }) {
             Text("Change text")
         }
 
         // Button 2: change text color
-        Button(onClick = { textColor = Color.Red }) {
+        Button(onClick = { textColor = Color.White }) {
             Text("Change text color")
         }
 
         // Button 3: change background
-        Button(onClick = { backgroundColor = Color.Yellow }) {
+        Button(onClick = { backgroundColor = Color.Blue }) {
             Text("Change background")
         }
 
