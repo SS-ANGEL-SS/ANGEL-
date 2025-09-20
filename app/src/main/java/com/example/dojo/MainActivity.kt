@@ -4,14 +4,15 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.*
 import androidx.compose.material3.Button
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.dojo.ui.theme.DojoTheme
 
@@ -35,12 +36,34 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
     var text by remember { mutableStateOf("Hello $name!") }
+    var textColor by remember { mutableStateOf(Color.Black) }
+    var backgroundColor by remember { mutableStateOf(Color.Transparent) }
 
-    Column(modifier = modifier) {
-        Text(text = text)
-        Button(onClick = { text = "Текст изменён!" }) {
-            Text("Нажми меня")
+    Column(
+        modifier = modifier
+            .fillMaxSize()
+            .padding(16.dp)
+            .background(backgroundColor),
+        verticalArrangement = Arrangement.spacedBy(16.dp)
+    ) {
+        Text(text = text, color = textColor)
+
+        // Button 1: change text
+        Button(onClick = { text = "Text changed!" }) {
+            Text("Change text")
         }
+
+        // Button 2: change text color
+        Button(onClick = { textColor = Color.Red }) {
+            Text("Change text color")
+        }
+
+        // Button 3: change background
+        Button(onClick = { backgroundColor = Color.Yellow }) {
+            Text("Change background")
+        }
+
+        //Code for revert
     }
 }
 
