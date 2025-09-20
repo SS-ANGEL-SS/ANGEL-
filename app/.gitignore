@@ -1,0 +1,7 @@
+# если Git ещё не инициализирован
+git config --global user.name "Твоё Имя"
+git config --global user.email "you@example.com"
+git init
+git add .
+git commit -m "Initial commit: Android Studio project created"
+
